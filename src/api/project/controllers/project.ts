@@ -5,6 +5,7 @@
 import { factories } from '@strapi/strapi'
 import { Context } from 'koa';
 import { projectsSchema } from '../models/project';
+import { responseTools } from '../../../lib/response-tools';
 
 const { dbReturn, apiReturn } = projectsSchema; 
 
@@ -17,6 +18,9 @@ export default factories.createCoreController('api::project.project',
         try {
             const projects = dbReturn.parse(
                 await strapi?.db?.query('api::project.project').findMany({
+                    where: { 
+                        publishedAt: { $not: null}
+                    },
                     populate: {
                         name: true,
                         description: true,
@@ -26,16 +30,10 @@ export default factories.createCoreController('api::project.project',
                 })
             );
 
-            response.status = 200;
-            response.body = apiReturn.parse(projects);
-
-            return response;
-
+            return responseTools.ok(response, apiReturn.parse(projects));
         } catch (error) {
-            response.status = 500
-            response.body = 'Internal Server Error';
 
-            return response;
+            return responseTools.internalError(response);
         }
 
     },  

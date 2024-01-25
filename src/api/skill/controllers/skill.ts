@@ -5,6 +5,7 @@
 import { factories } from '@strapi/strapi'
 import { Context } from 'koa';
 import { skillsSchema } from '../models/skill';
+import { responseTools } from '../../../lib/response-tools';
 
 const { dbReturn, apiReturn } = skillsSchema; 
 
@@ -18,6 +19,9 @@ export default factories.createCoreController('api::skill.skill',
         try {
             const skills = dbReturn.parse(
                  await strapi.db?.query('api::skill.skill').findMany({
+                    where: { 
+                        publishedAt: { $not: null}
+                    },
                     populate: {
                         name: true,
                         techs: true,
@@ -25,16 +29,10 @@ export default factories.createCoreController('api::skill.skill',
                 })
             );
 
-            response.status = 200;
-            response.body = apiReturn.parse(skills);
-
-            return response;
-
+            return responseTools.ok(response, apiReturn.parse(skills));
         } catch (error) {
-            response.status = 500
-            response.body = 'Internal Server Error';
 
-            return response;
+            return responseTools.internalError(response);
         }
 
     },  

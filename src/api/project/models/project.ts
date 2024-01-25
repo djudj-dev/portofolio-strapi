@@ -10,7 +10,7 @@ const dbReturn = z.array(z.object(
         }))
 
     }
-))
+)).min(1);
 
 const apiReturn = z.array(z.object(
     {
@@ -22,7 +22,7 @@ const apiReturn = z.array(z.object(
         }))
 
     }
-))
+)).min(1);
 
 export const projectsSchema = {
     apiReturn,

@@ -5,6 +5,7 @@
 import { factories } from '@strapi/strapi'
 import { Context } from 'koa';
 import { presentationSchema } from '../models/presentation';
+import { responseTools } from '../../../lib/response-tools';
 
 const { dbReturn, apiReturn } = presentationSchema; 
 
@@ -19,16 +20,10 @@ export default factories.createCoreController('api::presentation.presentation',
                 await strapi.db?.query('api::presentation.presentation').findMany()
             )
 
-            response.status = 200;
-            response.body = apiReturn.parse(presentation[0]);
-
-            return response;
-
+            return responseTools.ok(response,  apiReturn.parse(presentation[0]));
         } catch (error) {
-            response.status = 500
-            response.body = 'Internal Server Error';
 
-            return response;
+            return responseTools.internalError(response);
         }
 
     },  

@@ -16,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "richtext",
-      "required": true
-    },
     "techs": {
       "type": "relation",
       "relation": "oneToMany",
@@ -27,6 +23,10 @@
     },
     "repo": {
       "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "required": true
     }
   }
 }

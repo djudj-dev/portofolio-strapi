@@ -780,7 +780,7 @@ export interface ApiAboutMeAboutMe extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    text: Attribute.RichText;
+    text: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -842,7 +842,7 @@ export interface ApiPresentationPresentation extends Schema.SingleType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    description: Attribute.RichText & Attribute.Required;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -873,13 +873,13 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    description: Attribute.RichText & Attribute.Required;
     techs: Attribute.Relation<
       'api::project.project',
       'oneToMany',
       'api::tech.tech'
     >;
     repo: Attribute.String;
+    description: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

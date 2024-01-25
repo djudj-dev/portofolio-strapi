@@ -13,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "text": {
-      "type": "richtext"
+      "type": "text",
+      "required": true
     }
   }
 }

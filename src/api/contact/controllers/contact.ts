@@ -4,6 +4,7 @@
 import { Context } from 'koa';
 import { factories } from '@strapi/strapi'
 import { contactSchema } from '../models/contact';
+import { responseTools } from '../../../lib/response-tools';
 
 const { dbReturn, apiReturn } = contactSchema; 
 
@@ -18,16 +19,11 @@ export default factories.createCoreController('api::contact.contact',
                     await strapi.db?.query('api::contact.contact').findMany()
                 )
                 
-                response.status = 200;
-                response.body = apiReturn.parse(contacts);
-
-                return response;
+                return responseTools.ok(response, apiReturn.parse(contacts));
 
             } catch (error) {
-                response.status = 500
-                response.body = 'Internal Server Error';
 
-                return response;
+                return responseTools.internalError(response);
             }
 
         },  

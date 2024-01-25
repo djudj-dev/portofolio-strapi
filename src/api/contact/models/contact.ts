@@ -6,7 +6,7 @@ const dbReturn = z.array(z.object(
         iconName: z.string().optional(),
         link: z.string()
     }
-))
+)).min(1)
 
 const apiReturn = z.array(z.object(
     {
@@ -14,7 +14,7 @@ const apiReturn = z.array(z.object(
         iconName: z.string().optional(),
         link: z.string()
     }
-))
+)).min(1)
 
 export const contactSchema = {
     apiReturn,

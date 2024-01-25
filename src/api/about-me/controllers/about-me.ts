@@ -4,6 +4,7 @@
 import { Context } from 'koa';
 import { factories } from '@strapi/strapi'
 import { aboutMeSchema } from '../models/about-me';
+import { responseTools } from '../../../lib/response-tools';
 
 const { dbReturn, apiReturn } = aboutMeSchema 
 
@@ -18,16 +19,10 @@ export default factories.createCoreController('api::about-me.about-me',
                     await strapi?.db?.query('api::about-me.about-me').findMany()
                 );
         
-                response.status = 200
-                response.body = apiReturn.parse(aboutMe[0]);
-
-                return response;
-
+                return responseTools.ok(response, apiReturn.parse(aboutMe[0]));;
             } catch (error) {
-                response.status = 500
-                response.body = 'Internal Server Error';
-
-                return response;
+        
+                return responseTools.internalError(response);
             }
     
         },  
