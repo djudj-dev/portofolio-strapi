@@ -16,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "desc": {
+    "description": {
       "type": "richtext",
       "required": true
     }

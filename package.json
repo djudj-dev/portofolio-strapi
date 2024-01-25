@@ -9,17 +9,17 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.17.1",
-    "@strapi/plugin-users-permissions": "4.17.1",
-    "@strapi/plugin-i18n": "4.17.1",
     "@strapi/plugin-cloud": "4.17.1",
+    "@strapi/plugin-i18n": "4.17.1",
+    "@strapi/plugin-users-permissions": "4.17.1",
+    "@strapi/strapi": "4.17.1",
     "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
+    "styled-components": "5.3.3",
+    "zod": "^3.22.4"
   },
   "author": {
     "name": "A Strapi developer"
@@ -31,5 +31,8 @@
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/koa": "^2.14.0"
+  }
 }
