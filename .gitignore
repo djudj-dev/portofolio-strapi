@@ -112,3 +112,9 @@ exports
 dist
 build
 .strapi-updater.json
+
+############################
+# Ide
+############################
+
+.vscode/settings.json

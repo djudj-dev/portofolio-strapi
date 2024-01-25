@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "import",
+    "prettier"
+  ],
+  "overrides": [{
+    "files": ["*.ts*"],
+    "rules": {
+      "prettier/prettier": "off",
+      "@typescript-eslint/unbound-method": "off"
+    }
+  }],
+  "rules": {
+    "prettier/prettier": ["warn",
+        {
+            "trailingComma": "all",
+            "tabWidth": 2,
+            "singleQuote": true,
+            "printWidth": 80,
+            "bracket-pacing": true,
+            "bracketSameLine": false,
+            "arrowParens": "always"
+        }],
+    "prefer-const": "error",
+    "no-var": "error",
+    "no-console":  "off",
+    "import/prefer-default-export": "off"
+  },
+  "parser": "@typescript-eslint/parser"
+}

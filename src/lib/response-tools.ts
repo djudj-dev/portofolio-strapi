@@ -1,20 +1,21 @@
-import { Response } from "koa";
+// eslint-disable-next-line
+import { Response } from 'koa';
 
 const ok = (response: Response, body: unknown) => {
-    response.status = 200
-    response.body = body
+  response.status = 200;
+  response.body = body;
 
-    return response;
-}
+  return response;
+};
 
 const internalError = (response: Response) => {
-    response.status = 500
-    response.body = { msg : 'Internal Server Error' }
+  response.status = 500;
+  response.body = { msg: 'Internal Server Error' };
 
-    return response;
-}
+  return response;
+};
 
 export const responseTools = {
-    ok,
-    internalError
-}
+  ok,
+  internalError,
+};

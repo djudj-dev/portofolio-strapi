@@ -7,7 +7,8 @@
     "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.17.1",
@@ -33,6 +34,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/koa": "^2.14.0"
+    "@types/koa": "^2.14.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3"
   }
 }

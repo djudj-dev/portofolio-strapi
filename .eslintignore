@@ -1,0 +1,8 @@
+.strapi
+config
+database
+dist
+node_modules
+public
+src/admin
+*.js
