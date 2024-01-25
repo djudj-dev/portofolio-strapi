@@ -37,6 +37,5 @@ export default factories.createCoreController(
         return responseTools.internalError(response);
       }
     },
-  }
-  ),
+  }),
 );

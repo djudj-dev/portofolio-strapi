@@ -8,7 +8,8 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "strapi build && strapi start"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.17.1",
