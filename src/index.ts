@@ -8,7 +8,6 @@ export default {
    * This gives you an opportunity to extend code.
    */
 
-  // @ts-ignore
   register(/* { strapi }: { strapi: Strapi } */) {},
 
   /**
@@ -19,6 +18,5 @@ export default {
    * run jobs, or perform some special logic.
    */
 
-  // @ts-ignore
   bootstrap(/* { strapi }: { strapi: Strapi } */) {},
 };

@@ -1,57 +1,100 @@
-# 🚀 Getting started with Strapi
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+# strapi-portofolio 
 
-### `develop`
+This project is the cms related to my [portofolio-front](https://github.com/djudj-dev/portofolio-front)\.
+As the name suggests, it was created with [strapi](https://strapi.io/)\
+But the [zod](https://zod.dev/) and [vitest](https://vitest.dev/) libraries are also used extensively in the project.\
+The project is entirely in Typescript
+## Installation
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+To install on local you need to git clone :
 
+with HTTPS
+```bash
+$ https://github.com/djudj-dev/portofolio-strapi.git
 ```
-npm run develop
-# or
-yarn develop
+or with SSH 
+```bash
+$ git@github.com:djudj-dev/portofolio-strapi.git
 ```
+\
+And after that go inside the project folder and install dependencies :
+- with NPM
+    ```bash
+    $ npm install
+    ```
+- with YARN
+    ```bash
+    $ yarn install
+    ``` 
+- with PNPM
+    ```bash
+    $ pnpm install
+    ```
 
-### `start`
+## Run Locally
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+First for run locally you need to have a minimal strapi requirements, and a supported database running\
+Look at Strapi requirements and supported database [here](https://docs.strapi.io/dev-docs/deployment#hardware-and-software-requirements)
 
-```
-npm run start
-# or
-yarn start
-```
+Once this is good you will need to add a `.env` file in the project root for configure strapi.\
+The `.env` file will be used for configure the server port and host, but also the database, and other strapi feature.\
+In the root project you have a `.env.example` which can be used as a support for writting `.env`\
+You can also read the strapi doc of [Strapi base configurations](https://docs.strapi.io/dev-docs/configurations#base-configurations)
 
-### `build`
+Once You do that you can run locally by 2 way :    
+- In watch mode with `dev` script :
+    - with NPM
+        ```bash
+        $ npm run dev
+        ```
+    - with YARN
+        ```bash
+        $ yarn dev
+        ``` 
+    - with PNPM
+        ```bash
+        $ pnpm dev
+        ```
+Or with build and launch with `deploy` script : 
+- In watch mode with `dev` script :
+    - with NPM
+        ```bash
+        $ npm run deploy
+        ```
+    - with YARN
+        ```bash
+        $ yarn deploy
+        ``` 
+    - with PNPM
+        ```bash
+        $ pnpm deploy
+        ```
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+The project will start and be accessible at the host and port specified in the `.env` file.
+## Running Tests
 
-```
-npm run build
-# or
-yarn build
-```
+To run tests, you can run the following command
 
-## ⚙️ Deployment
+- with NPM
+    ```bash
+    $ npm run test 
+    ```
+- with YARN
+    ```bash
+    $ yarn test
+    ``` 
+- with PNPM
+    ```bash
+    $ pnpm test
+    ```
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+## Tech Stack
+- **NodeJs** : *JS runner*
+- **Typescript** : *JS Overlay*
+- **Strapi**  : *Headless CMS*
+- **PostgresSql** : *Database*
+- **Zod**  : *Types securing* 
+- **Vitest**  : *Test library*
+- **Sqlite3** : *Temp testing database*
+- **Supertest** : *API testing*
