@@ -1,7 +1,8 @@
 {
   "extends": [
     "airbnb-base",
-    "airbnb-typescript/base"
+    "airbnb-typescript/base",
+    "prettier"
   ],
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -26,7 +27,8 @@
     "prefer-const": "error",
     "no-var": "error",
     "no-console":  "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "object-curly-newline": "off"
   },
   "parser": "@typescript-eslint/parser"
 }

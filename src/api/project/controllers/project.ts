@@ -20,9 +20,6 @@ export default factories.createCoreController(
       try {
         const projects = dbReturn.parse(
           await strapi?.db?.query('api::project.project').findMany({
-            where: {
-              publishedAt: { $not: null },
-            },
             populate: {
               name: true,
               description: true,

@@ -7,3 +7,4 @@ public
 src/admin
 types/generated
 *.js
+vitest.config.ts

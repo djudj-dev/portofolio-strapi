@@ -83,6 +83,15 @@ export default ({ env }) => {
     },
   };
 
+  if (process.env.NODE_ENV === 'test') {
+    connections.sqlite = {
+      connection: {
+        filename: '.tmp/test.db',
+      },
+      useNullAsDefault: true,
+    }
+  }
+
   return {
     connection: {
       client,

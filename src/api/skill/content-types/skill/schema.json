@@ -4,16 +4,18 @@
   "info": {
     "singularName": "skill",
     "pluralName": "skills",
-    "displayName": "skill"
+    "displayName": "skill",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "techs": {
       "type": "relation",

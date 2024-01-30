@@ -20,9 +20,6 @@ export default factories.createCoreController(
       try {
         const skills = dbReturn.parse(
           await strapi.db?.query('api::skill.skill').findMany({
-            where: {
-              publishedAt: { $not: null },
-            },
             populate: {
               name: true,
               techs: true,

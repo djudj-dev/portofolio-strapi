@@ -4,7 +4,8 @@
   "info": {
     "singularName": "tech",
     "pluralName": "techs",
-    "displayName": "Tech"
+    "displayName": "Tech",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -13,7 +14,8 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     }
   }
 }
