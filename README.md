@@ -1,6 +1,10 @@
 #Test PR with commit over 2
 # Test PR with commit over
+<<<<<<< HEAD
 
+=======
+# Test PR with commit over 2
+>>>>>>> b673e39 (commit)
 # strapi-portofolio 
 
 This project is the cms related to my [portofolio-front](https://github.com/djudj-dev/portofolio-front)\.
